@@ -1,15 +1,33 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div>
+    <h1>Welcome to Vue JS Module</h1>
+    <p>{{ firstName }} {{ lastName }}</p>
+    <div>
+      <button @click="changeSurname">Change Surname</button>
+    </div>
+    <div>
+      <h2>Attribute binding</h2>
+      <h2>{{ msg }}</h2>
+      <input type="text" v-model="msg">
+    </div>
+  </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
 export default {
   name: 'App',
-  components: {
-    HelloWorld
+  data() {
+    return {
+      firstName: 'Lerato',
+      lastName: 'Peter',
+      msg: 'Hello class 1'
+    }
+  },
+  components: {},
+  methods: {
+    changeSurname() {
+      this.lastName = "Mukanya"
+    }
   }
 }
 </script>
